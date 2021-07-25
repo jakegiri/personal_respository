@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { ApolloClient, InMemoryCache, from } from "@apollo/client";
 import { onError } from "@apollo/client/link/error";
 import merge from "deepmerge";
-import isEqual from "lodash.isEqual";
+import isEqual from "lodash.isequal";
 import { createUploadLink } from "apollo-upload-client";
 
 import paginationField from "./paginationField";
