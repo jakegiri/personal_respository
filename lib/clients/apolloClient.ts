@@ -5,8 +5,6 @@ import merge from "deepmerge";
 import isEqual from "lodash.isequal";
 import { createUploadLink } from "apollo-upload-client";
 
-import paginationField from "./paginationField";
-
 //#########################################
 //#########################################
 //#########################################
@@ -37,7 +35,7 @@ function createApolloClient() {
       typePolicies: {
         Query: {
           fields: {
-            allProducts: paginationField(),
+            // allProducts: paginationField(),
           },
         },
       },
@@ -92,7 +90,7 @@ export function addApolloState(client, { props }) {
     props[APOLLO_STATE_PROP_NAME] = client.cache.extract();
   }
 
-  return pageProps;
+  return { props };
 }
 
 export function useApollo(pageProps) {
